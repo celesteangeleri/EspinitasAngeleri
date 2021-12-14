@@ -1,6 +1,6 @@
 import React from "react";
 import CardWidget from "../navbar/cardWidget/cardWidget"
-import "../../scss/main.scss"
+import "../../scss/navbar/navbar.scss"
 import { Link } from "react-router-dom";
 import {getCategories} from '../../products'
 import { useEffect, useState } from "react";
@@ -18,11 +18,11 @@ const Navbar = () => {
 console.log(categories);
     return (
         <nav className="NavbarItems">
-            <div>
-                <Link to ={'/'}><h1 className="navbar-logo"> Espinitas <i className="fas fa-seedling"></i></h1></Link>
-            </div>
+            
+                <Link className="navbar-logo" to ={'/'}><h1>Espinitas <i className="fas fa-seedling"></i></h1></Link>
+            
             <div className="nav-menu">
-            {categories.map(cat => <Link key={cat.id} className='' to={`/category/${cat.id}`}>{cat.nombre}</Link>)}
+            {categories.map(cat => <Link key={cat.id} className='nav-links' to={`/category/${cat.id}`}>{cat.nombre}</Link>)}
             </div>       
             <CardWidget />
         </nav>

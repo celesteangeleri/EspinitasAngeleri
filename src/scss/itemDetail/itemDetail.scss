@@ -2,20 +2,42 @@
     width: 80%;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.377);
     text-align: center;
+    margin-left: 150px;
+    height: 70%;
 
-}
-.nombreProducto{
-    font-size: 4rem;
-}
+    .nombreProducto{
+        font-size: 3rem;
+        font-family: "Poiret One", cursive;
+        text-align: center;
+        margin: 10px 0px 10px;
+    }
+    .imgProducto{
+        width: 500px;
+    }
+.descripcion{
+        padding: 0px 200px;
+
 .detalleProducto{
+        text-align: center;
+        margin: 50px;
+        font-family: "Poiret One", cursive;
+        font-size: 1rem;
+    }
+.cuidadoProducto{
+    font-size: 1rem;
     text-align: center;
     margin: 50px;
+    font-family: "Poiret One", cursive;
 }
-.imgProducto{
-    width: 700px;
+    .precioProducto{
+        font-size: 3rem;
+        color: black;
+        margin: 20px;
+    }
+
+
+
 }
-.precioProducto{
-    font-size: 3rem;
-    color: blue;
-    margin: 20px;
+    
 }
+

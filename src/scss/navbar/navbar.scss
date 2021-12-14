@@ -4,7 +4,68 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-family: "Poiret One", cursive;
+    
+    & nav-menu {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-gap: 10px;
+        list-style: none;
+        text-align: center;
+        width: 70vw;
+        justify-content: end;
+        margin-right: 2rem;
+        font-weight: bold;
+        text-decoration: none;
+        
+    
+    }    
+    
+    & h1 {
+        color:black;
+        justify-self: start;
+        margin-left: 20px;
+        cursor: pointer;
+        text-decoration: none;
+        font-family: "Poiret One", cursive;
+    }
+    & .navbar-logo{
+        text-decoration: none;
+    }
+  
+    .fa-seedling {
+        margin-left: 0.5rem;
+        font-size: 2rem;
+        color: cadetblue;
+    }
+    
+    .nav-links {
+        color: black;
+        text-decoration: none;
+        padding: 0.5rem 2rem;
+    }
+    
+    .nav-links:hover {
+        background-color: whitesmoke;
+        border-radius: 4px;
+        transition: all 0.2s ease-out;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 .navbar-logo {

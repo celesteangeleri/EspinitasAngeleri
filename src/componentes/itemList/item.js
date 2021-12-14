@@ -1,27 +1,23 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import "../../scss/main.scss"
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Item = ({product}) => {
+import "../../scss/itemListContainer/item.scss";
+
+const Item = ({ product }) => {
   const handleClick = (evt) => {
-    evt.stopPropagation()
-    console.log(`hice click en Item ${product.id}`)
-}
-    return (
-        <div className="item"  onClick={handleClick}>
-        <div>
-          <h1 className="nombreItem">{product.nombre}</h1>
-        </div>
-        <div>
-          <img className="imagenItem" src={product.img} alt="" />
-        </div>
-        <div>
-          <h3 className="precioItem">{product.precio}</h3>
-        </div>
-        <div>
-        <Link className='botonItem' to={`/detail/${product.id}`}>Ver detalle</Link></div>
-      </div>
-    )
-}
+    evt.stopPropagation();
+    console.log(`hice click en Item ${product.id}`);
+  };
+  return (
+    <div className="item" onClick={handleClick}>
+      <h1>{product.nombre}</h1>
+      <img src={product.img} alt="" />
+      <h3>{product.precio}</h3>
+      <Link className="botonLink" to={`/detail/${product.id}`}>
+        Ver detalle
+      </Link>
+    </div>
+  );
+};
 
-export default Item
+export default Item;

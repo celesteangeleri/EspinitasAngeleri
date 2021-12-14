@@ -1,5 +1,6 @@
 import React from 'react'
 import Item from './Item'
+import '../../scss/main/main.scss'
 
 const ItemList = ({products = []}) => {
     console.log('Aca estan los productos en ItemList', products)

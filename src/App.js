@@ -1,6 +1,6 @@
 //////////////estilos////////////////
 import "./App.css";
-import "./scss/main.scss";
+import "./scss/main/main.scss";
 /////////////////////react////////////
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";

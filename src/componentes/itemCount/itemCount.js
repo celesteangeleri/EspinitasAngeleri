@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../scss/main.scss"
+import "../../scss/main/main.scss"
 import  { useState } from 'react';
 
 
@@ -24,9 +24,9 @@ const ItemCount = () => {
     }
     return (
         <div className="card" >
-            <div className="card-header">
-                <h3>contador</h3>
-            </div>
+            
+                <h3>Agregar al carrito</h3>
+            
 
             <div className="card-body">
                 <button className="boton" onClick={sumar}>+</button>

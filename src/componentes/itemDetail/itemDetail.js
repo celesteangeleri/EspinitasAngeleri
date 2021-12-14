@@ -1,5 +1,5 @@
 import React from "react";
-import "../../scss/main.scss";
+import "../../scss/main/main.scss";
 
 const ItemDetail = ({ prod }) => {
   return (
@@ -7,9 +7,11 @@ const ItemDetail = ({ prod }) => {
       <div className="producto">
         <h1 className="nombreProducto">{prod?.nombre}</h1>
         <img className="imgProducto" src={prod?.img} alt="" />
-        <h2 className="detalleProducto"> {prod?.descripcion}</h2>
-        <h3 className="detalleProducto">{prod?.cuidados}</h3>
-        <h3 className="precioProducto">{prod?.precio}</h3>
+        <div className="descripcion">
+          <h2 className="detalleProducto"> DESCRIPCION: {prod?.descripcion}</h2>
+          <h3 className="cuidadoProducto">CUIDADOS: {prod?.cuidados}</h3>
+          <h3 className="precioProducto">Precio: {prod?.precio}</h3>
+        </div>
       </div>
     </div>
   );

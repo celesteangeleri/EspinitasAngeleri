@@ -1,28 +1,47 @@
 .item {
-    margin: 45px;
+    margin: 40px;
     color: black;
     width: 80%;
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.377);
-}
-.botonItem {
-    margin-left: 65px;
-    margin-top: 20px;
-    font-size: 1rem;
-    color: black;
-    text-align: center;
-}
-.precioItem {
-    color: black;
-    text-align: center;
-    font-size: 1rem;
-}
-.imagenItem {
-    text-align: center;
-    width: 275px;
-    margin: 10px;
-}
-.nombreItem {
-    font-size: 1rem;
-    text-align: center;
-    color: black;
+    height: 430px;
+    background-color: rgb(235, 226, 226);
+    border-radius: 3px;
+    box-shadow: 4px 5px 18px 2px rgba(97,113,115,0.47);
+    & h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        color: black;
+        font-family: "Poiret One", cursive;
+    }
+    & h3 {
+        color: black;
+        text-align: center;
+        font-size: 1rem;
+        
+    }
+
+    & img {
+        text-align: center;
+        width: 200px;
+        height: 250px;
+        margin: 10px 0 10px 42px;
+        object-fit: cover;
+        border-radius: 2px;
+    }
+
+    .botonLink {
+        text-decoration: none;
+        border: 1px solid rgb(9, 59, 36);
+        border-radius: 2px;
+        box-shadow: 4px 5px 13px -2px rgba(97,113,115,0.75);
+        margin:  0px 10px 20px 90px;
+        font-size: 1rem;
+        font-weight: 800;
+        text-align: center;
+        background-color: rgba(23, 32, 23, 0.274);
+        font-family: "Poiret One", cursive;
+        color: black;
+        padding: 5px 10px;
+        
+    }
+    
 }

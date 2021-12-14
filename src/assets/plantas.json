@@ -2,7 +2,7 @@
     {   
         "id":"5",
         "nombre":"Cactus chin",
-        "img":"{https://imgur.com/QwpnLMI}",
+        "img":"https://i.imgur.com/QwpnLMI.jpg",
         "descripcion":"El Gymnocalycium, también conocido popularmente como cactus chin enano, es una especie de planta familia de las Cactaceae de origen sudamericano. Se trata de cactus pequeños de interior que pueden alcanzar entre 10 y 13 centímetros de altura, por lo que estará bien en exterior en un entorno adecuado pero también puede cultivarse en macetas para tenerlo en interior con las condiciones ambientales que precisa. Este cactus, además, cuenta con unas bellísimas flores de colores muy vivos, como rojos, rosados o púrpuras. Florecen a principios de verano e incluso se pueden extraer semillas de sus frutos.",
         "cuidados":"Entre los cuidados de un cactus mini chin, destacamos que requiere siempre de una exposición solar parcial, es decir, prefiere la semisombra. En el interior requiere de estancias muy iluminadas pero sin que le de el sol directo. Por otro lado, prefieren los suelos ácidos, por lo que se recomienda preparar una mezcla de arena gruesa, turba y tierra vegetal, podrás encontrarla en jardinerías y viveros. El riego debe ser moderado, una vez por semana (siempre que la tierra esté seca).",
         "precio":"$500",
@@ -11,7 +11,7 @@
     {
         "id":"6",
         "nombre":" Cactus Alas de ángel",
-        "img":"../../public/images/cactus2.jpg",
+        "img":"https://i.imgur.com/QxSZQd3.jpg",
         "descripcion":"El cactus opuntia microdasys es conocido también con el nombre de orejas de conejo, Alas de ángel y nopalillo.Los tallos son del tipo cladodio, característicos del género Opuntia (ovalados y aplanados) y se ramifican continuamente.",
         "cuidados":"Hay que tener cierto cuidado con los gloquidios, esos pequeños pelitos de las areolas ya que se deprenden de manera muy fácil y pueden provocar pequeñas irritaciones en la piel.",
         "precio":"$300",
@@ -20,7 +20,7 @@
     {
         "id":"7",
         "nombre":"Cactus San Pedro",
-        "img":"../../public/images/cactus3.jpg",
+        "img":"https://i.imgur.com/2RB9z1e.jpgS",
         "descripcion":"El Echinopsis pachanoi, conocido popularmente como cactus San Pedro, es una planta que es fácil de cultivar en muchos hábitats, a pesar de proceder de la cordillera andina y localizase en altitudes que oscilan entre los 1.000 y 3.000 metros de altura aproximadamente. Su uso está muy extendido como planta ornamental en todo el mundo, siendo muy empleada sobre todo para crear espacios delimitadores entre zonas de un mismo jardín e, incluso, dentro del hogar. Además, es un cactus muy conocido tradicionalmente por ser muy utilizado en medicina y en veterinaria por las propiedades que tiene. A pesar de ello, como toda planta, requiere de unos cuidados específicos para que esté en perfecto estado.",
         "cuidados":"Dentro de los cuidados del cactus San Pedro que son básicos para su correcto desarrollo, está el riego. Aunque es una planta que está acostumbrada a abundantes lluvias andinas, lo cierto es que es importante que no la riegues en exceso. Por eso, es importante que la zona del jardín o la maceta en la que esté tengan un buen sistema de drenaje.",
         "precio":"$350",
@@ -29,7 +29,7 @@
     {
         "id":"8",
         "nombre":"Cactus columnar",
-        "img":"../../public/images/cactus4.jpg",
+        "img":"https://i.imgur.com/gOX4twD.jpg",
         "descripcion":"En climas desérticos y secos, como en los desiertos de México, nacen los saguaros, sahuaro, cactus columnares o Carnegiea gigantea. Este tipo de cactus requieren de mucha luz, por lo que pueden tenerse en patios interiores con techos acristalados o en habitaciones en las que entre mucha luz, siempre en maceta grande. Es un cactus del cual florecen flores blancas y su fruto es muy beneficioso para la salud.",
         "cuidados":"Dado que se trata de una planta muy resistente, no requiere de muchos cuidados. No obstante, debes saber que es conveniente tenerlo en lugares de altas temperaturas, especialmente en verano y que debe suspenderse el riego durante el invierno, sobre todo en lugares muy húmedos, con bastantes lluvias y frío. Como la mayoría de los cactus de tipo columnar necesita regarse de manera moderada y debe hacerse siempre que la tierra esté seca a varios cm de profundidad, lo cual puedes comprobar hundiendo los dedos en la tierra o con un palo de madera.",
         "precio":"$600",
@@ -38,7 +38,7 @@
     {
         "id":"9",
         "nombre":"Cactus cresta",
-        "img":"../../public/images/cactus5.jpg",
+        "img":"https://i.imgur.com/FuG4mkQ.jpg",
         "descripcion":"La Euphorbia lactea, más comúnmente llamada cactus cresta, es un cactus con espinas negras. Sus tallos crestados y ondulados verdes con manchas amarillentas, violetas o rosas, son muy curiosos y ornamentales. La planta cresta se caracteriza por un crecimiento lento, pero también por un fácil cultivo, por lo que es perfecto para utilizarla como planta de interior.",
         "cuidados":"Requiere una exposición iluminada y recibir los primeros rayos de sol, aunque debes evitar el sol directo a las horas centrales del día. Además, resisten muy bien la sequía por lo que puedes regarlas cada 10 días en verano, siempre que el sustrato esté bien seco. El exceso de riego puede provocar que los tejidos se pudran, así que evita pasarte con el agua.",
         "precio":"$400",
@@ -47,7 +47,7 @@
     {
         "id":"10",
         "nombre":"Lengua de suegra",
-        "img":"../../public/images/sucu1.jpg",
+        "img":"https://i.imgur.com/rdAdrVA.jpg",
         "descripcion":"La Sansevieria Cylindrica o Lengua de Suegra, es una planta muy decorativa gracias a la extravagancia de sus hojas con forma de lanzas cilíndricas y con pigmentaciones a franjas de colores verde y amarillo. Originaria de Angola, Kenia y otros países africanos, puede alcanzar hasta 2 metros de altura en su hábitat natural, pero no acostumbra a pasar de los 60 en los hogares.",
         "cuidados":"Los cuidados de la sansevieria cylindrica son sencillos: necesitan poca luz para crecer y tampoco necesitan mucho riego. Hay que regar cuando el sustrato se haya secado totalmente. En concreto, uno de los mayores problemas de las sansevierias es el exceso de riego.",
         "precio":"$800",
@@ -55,7 +55,7 @@
     },{
         "id":"11",
         "nombre":"Arbol de Jade",
-        "img":"../../public/images/sucu2.jpg",
+        "img":"https://i.imgur.com/p1AIYf5.jpg",
         "descripcion":"La crassula arborescens es una planta crasa o suculenta cuyas hojas se caracterizan por ser muy carnosas y por su color rojizo de todo el perímetro. Ese tinte rojizo se agudiza más en invierno con el frío.",
         "cuidados":"La planta o árbol de jade, al ser una planta suculenta, necesita poca agua para estar sana. De hecho, lo más recomendable es regarla únicamente cuando su tierra esté completamente seca, evitando regarla cuando el suelo todavía está húmedo y, sobre todo, evitando la presencia del agua sobrante en el plato inferior de la maceta,",
         "precio":"$700",
@@ -64,7 +64,7 @@
     {
         "id":"12",
         "nombre":"Planta Corazón",
-        "img":"../../public/images/sucu3.jpg",
+        "img":"https://i.imgur.com/48Urw0O.jpg",
         "descripcion":"La Hoya kerrii es una planta enredadera de crecimiento medio-rápido que puede alcanzar hasta 4 metros de altura. Es originaria del sureste de Asia, en concreto del sur de China, Vietnam, Laos, Camboya, Tailandia y de la isla de Java (Indonesia). Tiene las hojas carnosas, en forma de corazón, que es por lo que se llama la planta del corazón. Estas brotan de tallos muy delgados, de apenas 7 milímetros de diámetro, y miden 6 centímetros de ancho.",
         "cuidados":"se ha colocar en una habitación luminosa, pues de lo contrario no crecerá bien. Asimismo, es importante mantenerla alejada de las corrientes de aire tanto frías como calientes. Es por eso por lo que hay que evitar ponerla en las zonas de paso, pues la corriente de aire que generamos nosotros al pasar podría acabar dañando sus hojas.El riego ha de ser más bien escaso. Es una planta muy sensible al exceso de agua, pudiéndose pudrir con rapidez. Para evitarlo, hay que dejar secar el sustrato o la tierra por completo antes de volver a regar. Además, debes de humedecer la tierra o sustrato, nunca la planta.",
         "precio":"$500",
@@ -73,7 +73,7 @@
     {
         "id":"13",
         "nombre":"Árbol de la Abundancia",
-        "img":"../../public/images/sucu4.jpg",
+        "img":"https://i.imgur.com/XyeN4JZ.jpg",
         "descripcion":"Portulacaria afra o arbol de la abundancia,es una especie muy popular en los jardines y en las colecciones de plantas suculentas. Es una planta suculenta con tallos leñosos (con el tiempo), ramificados y delgados que crece lentamente. Posee hojas generalmente ovaladas que surgen en pares opuestos en cada nudo. Las hojas tienen un color verde intenso que con el contraste del marrón de los tallos, hacen a esta planta preciosa",
         "cuidados":" Su cuidado es muy sencillo y su principal enemigo son las temperaturas muy bajas. Necesita poca agua, sustrato con buen drenaje, buena iluminación (no pleno sol) y temperaturas altas durante todo el año.",
         "precio":"$1500",
@@ -82,7 +82,7 @@
     {
         "id":"14",
         "nombre":"Planta Hormiga",
-        "img":"../../public/images/sucu5.jpg",
+        "img":"https://i.imgur.com/pSw8k5U.jpg",
         "descripcion":" La Dischidia nummularia o planta hormiga, una crasa epifita hermosa, elegante y con alto valor decorativo, ideal para usar en interiores.Posee largos tallos colgantes cubiertos por curiosas hojas carnosas redondeadas que parecen monedas.En tiempos de verano suelen brotar de ellas pequeñas flores blancas y cerosas de bajo interés ornamental.",
         "cuidados":"Como todas las suculentas, la Dischidia redonda es autosuficiente y no necesitara de ti mucha atención; Para que permanezca sana solo deberás rociarla con agua sin cal y con pulverizador unas 2 veces por semana en verano la y en invierno 2 veces al mes",
         "precio":"$300",
@@ -91,7 +91,7 @@
     {
         "id":"15",
         "nombre":"Costilla de Adán ",
-        "img":"../../public/images/interior1.jpg",
+        "img":"https://i.imgur.com/3axD5uG.jpg",
         "descripcion":"La Monstera adansonii o costilla de Adán,  Es una planta espectacular, que puede alcanzar gran tamaño y es muy decorativa. Tiene unas hojas muy características que crecen inicialmente en forma de corazón, y que según van madurando generan unas aperturas o ‘cortes’ en sus laterales que le dan su famoso nombre",
         "cuidados":"En realidad, la Costilla de Adán es una planta muy sencilla de cuidar y es bastante agradecida. Lo ideal es mantener una pauta de riego moderada, dejando secar el sustrato entre tomas evitando encharcarla. Una señal de que quizás la estás regando demasiado, es cuando las puntas de las hojas se vuelven marrones. Déjala unos días sin agua hasta que la tierra y las raíces pierdan todo el exceso de humedad, y entonces retoma el riego pero espaciándolo algo más.",
         "precio":"$1300",
@@ -100,7 +100,7 @@
     {
         "id":"16",
         "nombre":"Photus",
-        "img":"../../public/images/interior2.jpg",
+        "img":"https://i.imgur.com/C4Vwk71.jpg",
         "descripcion":"El photus o Epipremnum aureum es una de las plantas de interior más populares. Su porte colgante, sus llamativas hojas en forma de corazón y su capacidad de depurar el aire la convierten en una planta ideal para el hogar. Es muy resistente, de ahí que se recomiende para las personas con poca mano con las plantas.",
         "cuidados":" El riego ha de ser moderado. Aunque se riegue poco, sobrevivirá aunque no desarrollará esas hojas gigantes. Respecto al abono, se recomienda hacerlo una vez al mes con un abono ecológico (en primavera y verano), La temperatura ideal del poto se encuentra entre los 16ºC y los 21ºC. Las mínimas que soporta están entre los 3ºC y los 6ºC.",
         "precio":"$1200",
@@ -109,7 +109,7 @@
     {
         "id":"17",
         "nombre":"Zamioculca",
-        "img":"../../public/images/interior3.jpg",
+        "img":"https://i.imgur.com/L24IBOp.jpg",
         "descripcion":"La Zamioculca zamicifolia o Zamioculca es una planta de interior originaria de África es muy resistente y poco exigente. Esto, unido a su porte atípico y moderno, hace que se convierta en una planta de interior indispensable para cualquier hogar.",
         "cuidados":"Las zamioculcas no son muy exigentes en cuanto a la luz y crecen bien incluso en aquellos lugares donde no hay mucha luz natural, pero con suficiente suplemento de luz artificial.Los riegos han de ser moderados, dejando secar la tierra entre riego y riego. Durante el invierno es importante reducir los riegos y, al inicio de la primavera, añadiremos abono líquido mensualmente al agua del riego. Tolera perfectamente los ambientes secos, por lo que no requiere pulverizaciones de follaje.",
         "precio":"$1500",
@@ -118,7 +118,7 @@
     {
         "id":"18",
         "nombre":" Lengua de tigre",
-        "img":"../../public/images/interior4.jpg",
+        "img":"https://i.imgur.com/v0hqvpE.jpg",
         "descripcion":"La planta conocida científicamente como Sansevieria, y en español como lengua de suegra o lengua de tigre y en inglés llamada popularmente snake plant, es de la familia de las Liliáceas originaria de África, Asia y sobre todo Nueva Guinea. Esta planta se volvió muy popular dante los años 30 como una planta de interior muy resistente",
         "cuidados":"Se trata de una planta crasa, que tolera bien la sequía y los escasos cuidados, lo único que no resiste es el exceso de agua, ni el frío extremo.",
         "precio":"$1800",
@@ -127,7 +127,7 @@
     {
         "id":"20",
         "nombre":"Helecho plumoso",
-        "img":"../../public/images/interior5.jpg",
+        "img":"https://i.imgur.com/SRcUUt6.jpg",
         "descripcion":"la planta Asparagus setaceus o Helecho plumoso son plantas trepadoras que pueden alcanzar más de 3 metros de altura pero suele cultivarse una variedad 'Nanus' de tamaño mucho menor. Lo que parecen hojas plumosas en realidad son tallos modificados llamados cladodios. Las hojas verdaderas son minúsculas y parecen escamas. Las flores no tienen interés ornamental pero sí sus frutos rojos que pueden resultar decorativos.",
         "cuidados":"El Helecho plumoso necesita una exposición bien iluminada pero evitando directamente los rayos del sol en las horas más calurosas del día. En invierno la temperatura no debería ser inferior a los 7 ºC pero tampoco les gusta el calor excesivo de las calefacciones o del verano mediterráneo.Regar frecuentemente en verano y primavera pero sin encharcar. El resto del año los riegos se espaciarán un poco pero sin que el sustrato llegue a secarse por completo. Les beneficia un plato con guijarros humedecidos bajo la maceta para aumentar la humedad ambiental. Si hace mucho calor conviene rociarlos con agua sin cal cada 2 días.",
         "precio":"$900",

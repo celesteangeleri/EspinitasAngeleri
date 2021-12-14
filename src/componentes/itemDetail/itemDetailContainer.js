@@ -1,5 +1,5 @@
 import React from "react";
-import "../../scss/main.scss";
+import "../../scss/main/main.scss";
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { getProductById } from '../../products'
