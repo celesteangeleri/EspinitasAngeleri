@@ -9,6 +9,11 @@ export const MenuItems = [
         url:'#',
         cName:'nav-links'
     },
+    {
+        title:'Categorias',
+        url:'#',
+        cName:'nav-links'
+    }
     
    
 ]

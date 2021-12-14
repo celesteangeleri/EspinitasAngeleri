@@ -1,20 +1,25 @@
+//////////////estilos////////////////
 import "./App.css";
-import React from 'react';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import './scss/main.scss'
+import "./scss/main.scss";
+/////////////////////react////////////
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+/////////////////////componentes//////////////////
+import Navbar from "./componentes/navbar/Navbar";
+import ItemListContainer from "./componentes/itemList/ItemListContainer";
+import ItemDetailContainer from "./componentes/itemDetail/ItemDetailContainer";
+import ItemCount from "./componentes/itemCount/ItemCount";
+
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Switch>
-        {/* <Route exact path='/'>
-          <ItemListContainer />
-        </Route>
-        <Route>
-          <ItemDetailContainer />
-        </Route>
-  <ItemCount />*/}
-      </Switch>
+      <Routes>
+        <Route exact path="/" element={<ItemListContainer />}></Route>
+        <Route path="category/:categoryId" element={<ItemListContainer />}></Route>
+        <Route path="detail/:paramId" element={<ItemDetailContainer />}></Route>
+        <Route path="count" element={<ItemCount />}></Route>       
+      </Routes>
     </BrowserRouter>
   );
 }

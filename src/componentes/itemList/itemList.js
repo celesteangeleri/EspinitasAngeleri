@@ -1,12 +1,16 @@
 import React from 'react'
-import "../../scss/main.scss"
+import Item from './Item'
 
-const itemList = () => {
+const ItemList = ({products = []}) => {
+    console.log('Aca estan los productos en ItemList', products)
     return (
-        <div>
+        <div className='contenedor'>
+             {products.map(product =><Item key={product.id} product={product}/>
             
+
+            )}
         </div>
     )
 }
 
-export default itemList
+export default ItemList

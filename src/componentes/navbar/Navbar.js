@@ -1,27 +1,31 @@
 import React from "react";
-import { MenuItems } from "./MenuItems";
 import CardWidget from "../navbar/cardWidget/cardWidget"
 import "../../scss/main.scss"
-
-
+import { Link } from "react-router-dom";
+import {getCategories} from '../../products'
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+
+    const [categories, setCategories] =  useState ([])
+
+    useEffect (() =>{
+        getCategories().then(categories =>{
+            setCategories(categories)
+        })
+    },[])
+
+console.log(categories);
     return (
         <nav className="NavbarItems">
-        <h1 className="navbar-logo"> Leiliani <i className="fas fa-seedling"></i></h1>
-        <div className="menu-icon"></div>
-        <ul className="nav-menu">
-            {MenuItems.map((item, index) => {
-                return (
-                <li key={index}>
-                    <a className={item.cName} href={item.url}>
-                        {item.title}
-                    </a>
-                </li>)
-            })}
+            <div>
+                <Link to ={'/'}><h1 className="navbar-logo"> Espinitas <i className="fas fa-seedling"></i></h1></Link>
+            </div>
+            <div className="nav-menu">
+            {categories.map(cat => <Link key={cat.id} className='' to={`/category/${cat.id}`}>{cat.nombre}</Link>)}
+            </div>       
             <CardWidget />
-        </ul>
-    </nav>
+        </nav>
 )
     
 }
