@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+#  Bienvenido a mi primer proyecto ReactJs
+
+## 👋 Mi Nombre es Celeste Angeleri y estoy estudiando en CoderHouse
+
+## 👨‍💻 Podes encontrar alguno de mis otros proyectos en https://github.com/celesteangeleri
+
+## 📫 Y podes contactarme por aqui angelericeleste@gmail.com
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
