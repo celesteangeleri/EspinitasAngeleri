@@ -9,11 +9,17 @@ import Navbar from "./componentes/navbar/Navbar";
 import ItemListContainer from "./componentes/itemList/ItemListContainer";
 import ItemDetailContainer from "./componentes/itemDetail/ItemDetailContainer";
 import ItemCount from "./componentes/itemCount/ItemCount";
+///////////////////////notificaciones////////////
+import { NotificationContextProvider } from "./context/NotificatiosContext";
+import Notification from './componentes/notification/Notification'
+
 
 function App() {
   return (
+    <NotificationContextProvider>
     <BrowserRouter>
       <Navbar />
+      <Notification/>
       <Routes>
         <Route exact path="/" element={<ItemListContainer />}></Route>
         <Route path="category/:categoryId" element={<ItemListContainer />}></Route>
@@ -21,6 +27,7 @@ function App() {
         <Route path="count" element={<ItemCount />}></Route>       
       </Routes>
     </BrowserRouter>
+    </NotificationContextProvider>
   );
 }
 

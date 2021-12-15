@@ -28,7 +28,7 @@ const ItemDetailContainer = () => {
     <div>
       <div>
         <ItemDetail prod={products} />
-        <ItemCount/>
+        
       </div>
     </div>
   );

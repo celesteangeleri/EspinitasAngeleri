@@ -1,42 +1,37 @@
-import React from 'react'
-import "../../scss/main/main.scss"
-import  { useState } from 'react';
+import React from "react";
+import "../../scss/main/main.scss";
+import { useState } from "react";
 
+const ItemCount = ({ initial = 0, stock = 0, onAdd }) => {
+  const [cantidad, setCantidad] = useState(initial);
 
-const ItemCount = () => {
-
-    const stock = 10
-    const [contador, setContador] = useState(0)
-
-    const sumar = () => {
-        if (contador >= stock) {
-            return (
-                console.log('sin stock')
-            )
-        } setContador(contador + 1);
+  const sumar = () => {
+    if (cantidad < stock) {
+      setCantidad(cantidad + 1);
     }
-    const restar = () => {
-        if (contador <= 0) {
-            return (console.log('imposible'))
+  };
 
-        }
-        setContador(contador - 1);
+  const restar = () => {
+    if (cantidad > 0) {
+      setCantidad(cantidad - 1);
     }
-    return (
-        <div className="card" >
-            
-                <h3>Agregar al carrito</h3>
-            
+  };
+  return (
+    <div className="card">
+      <div className="card-body">
+        <button className="boton" onClick={sumar}>
+          +
+        </button>
+        <span> {cantidad}</span>
+        <button className="boton" onClick={restar}>
+          -
+        </button>
+        <button onClick={() => console.log("se agregó al carrito")}>
+          agregar al carrito
+        </button>
+      </div>
+    </div>
+  );
+};
 
-            <div className="card-body">
-                <button className="boton" onClick={sumar}>+</button>
-                <span> {contador}</span>
-                <button className="boton" onClick={restar}>-</button>
-            </div>
-
-
-        </div>
-    )
-}
-
-export default ItemCount
+export default ItemCount;
