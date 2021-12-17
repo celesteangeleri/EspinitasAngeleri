@@ -1,47 +1,24 @@
 import React from "react";
 import "../../scss/main/main.scss";
 import { useState, useContext } from 'react'
-import NotificationContext from '../../context/NotificatiosContext'
 
-const ButtonCount = ({ onConfirm, maxQuantity}) =>{
-  const [contador, setContador ] = useState (0)
-
-const sumar = () => {
-  if (contador < maxQuantity) {
-    setContador(contador + 1)    
-  }
-}
-const restar = () =>{
-  if (contador > 0) {
-    setContador(contador - 1)
-    
-  }
-}
-  return (
-    <div className="contenedorCarrito">
-      <p className="contador"> {contador}</p>
-      <div>
-        <button className="botonCarrito" onClick={sumar}>+</button>             
-        <button className="botonCarrito" onClick={restar}>-</button>
-      </div>
-      <div className="botonAdd">
-        <button  onClick={() => onConfirm (contador)}>  agregar al carrito </button>      
-      </div>
-    </div>
-  )
-}
+import ItemCount from "../itemCount/ItemCount";
+import { Link } from "react-router-dom";
 
 
 
 const ItemDetail = ({ prod }) => {
 
-  const Contador =  ButtonCount
+  const [addCarrito, setCarrito] = useState ([])
+  
+  const onAdd = (contador )=>{
+   
+    setCarrito(contador)
+    
+  
+  }
 
-  const { setNotification } = useContext(NotificationContext)
-
-  const addCarrito = (contador) => {
-    setNotification('success',`Agregado al carrito ${contador}`)
-}
+ 
 
   return (
     <div className="containerFlex">
@@ -55,9 +32,9 @@ const ItemDetail = ({ prod }) => {
         <h2 className="detalleProducto"> {prod?.descripcion}</h2>
         <p className="centrar"> CUIDADOS:</p>
         <h3 className="cuidadoProducto"> {prod?.cuidados}</h3>
-        <h3 className="precioProducto">Precio: {prod?.precio}</h3>
+        <h3 className="precioProducto">Precio: $ {prod?.precio}</h3>
+        {addCarrito > 0 ? <Link className="" to='/cart'> finalizar Compra</Link> : <ItemCount onAdd={onAdd} stock={prod?.stock}  />}
 
-        <Contador onConfirm={addCarrito} maxQuantity={prod?.stock}/>
       </div>
     </div>
     
