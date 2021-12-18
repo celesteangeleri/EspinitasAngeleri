@@ -10,17 +10,24 @@ import ItemListContainer from "./componentes/itemList/ItemListContainer";
 import ItemDetailContainer from "./componentes/itemDetail/ItemDetailContainer";
 import ItemCount from "./componentes/itemCount/ItemCount";
 import Cart from "./componentes/cart/Cart";
+import { CartContextProvider } from "./context/CartContext";
 ///////////////////////notificaciones////////////
 import { NotificationContextProvider } from "./context/NotificatiosContext";
 import Notification from './componentes/notification/Notification'
 
 
 function App() {
+
+
   return (
-    <NotificationContextProvider>
+
+   <CartContextProvider>
+   <NotificationContextProvider>
+  
     <BrowserRouter>
       <Navbar />
-      <Notification/>
+      
+     <Notification/>
       <Routes>
         <Route exact path="/" element={<ItemListContainer />}></Route>
         <Route path="category/:categoryId" element={<ItemListContainer />}></Route>
@@ -29,7 +36,9 @@ function App() {
         <Route path= "/cart" element= {<Cart/>} ></Route> 
       </Routes>
     </BrowserRouter>
-    </NotificationContextProvider>
+
+</NotificationContextProvider>
+</CartContextProvider>
   );
 }
 

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { getProductById } from '../../products'
 import { useParams } from 'react-router-dom'
-import ItemCount from "../itemCount/ItemCount";
+
 
 const ItemDetailContainer = () => {
   

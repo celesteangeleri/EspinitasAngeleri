@@ -15,12 +15,12 @@ const Navbar = () => {
         })
     },[])
 
-console.log(categories);
     return (
         <nav className="NavbarItems">            
                 <Link className="navbar-logo" to ={'/'}><h1>Espinitas <i className="fas fa-seedling"></i></h1></Link>            
-            <div className="nav-menu">
-            {categories.map(cat => <Link key={cat.id} className='nav-links' to={`/category/${cat.id}`}>{cat.nombre}</Link>)}
+            <div className="nav-menu">              
+                        {categories.map(cat => <Link key={cat.id} className='nav-links' to={`/category/${cat.id}`}>{cat.nombre}</Link>)}
+                        
             </div>       
             <CardWidget />
         </nav>

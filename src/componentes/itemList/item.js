@@ -6,7 +6,7 @@ import "../../scss/itemListContainer/item.scss";
 const Item = ({ product }) => {
   const handleClick = (evt) => {
     evt.stopPropagation();
-    console.log(`hice click en Item ${product.id}`);
+    
   };
   return (
     <div className="item" onClick={handleClick}>

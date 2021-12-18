@@ -13,7 +13,7 @@ const ItemListContainer = () => {
     
     useEffect(() => {
         getProducts(categoryId).then(item =>{
-            console.info(item);
+            
             setProducts(item)
         }).catch(err =>{
             console.log(err);
@@ -24,11 +24,13 @@ const ItemListContainer = () => {
         
     }, [categoryId])
 
+  
     return (
         <div>
             <ItemList products={products} />    
         </div>
     )
+   
 }
 
 export default ItemListContainer

@@ -16,7 +16,7 @@ export const NotificationContextProvider = ({children}) => {
         }, 5000)
     }
 
-    console.log({children})
+ 
 
     return (
         <Context.Provider value={{
