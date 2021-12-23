@@ -1,36 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, createContext, useContext, useMemo } from "react";
 
-export const CartContext = React.createContext()
+const CartContext = createContext();
 
-export const CartContextProvider = ({children}) =>{
-    const [cartCantidad, setCartCantidad] = useState();
-    const [itemCarrito, setItemCarrito] = useState([])
- console.log(children,'children');
-const addItemCarrito = (prod) => {
-    if (itemCarrito.length > 0){
-        setItemCarrito ([...itemCarrito, prod])
-    } else setItemCarrito(prod)
+export function CartContextProvider({ children }) {
+  const [cartCantidad, setCartCantidad] = useState(0);
+  const [itemCarrito, setItemCarrito] = useState([]);
+  const [count, setCount] = useState(0);
 
-    if (cartCantidad){
-        setCartCantidad(cartCantidad + prod.carrito)
-    }else setCartCantidad(prod.carrito)
+  const addItemCarrito = (prod) => {
+    if (itemCarrito.length > 0) {
+      setItemCarrito([...itemCarrito, prod]);
+    } else setItemCarrito(prod);
+  };
+  const addCantidadCarrito = (prod, event) => {
+    setCartCantidad(prod + cartCantidad);
+  };
+
+  const increment = () => setCount((counter) => counter + 1);
+
+  const value = useMemo(
+    () => ({
+      itemCarrito,
+      addCantidadCarrito,
+      cartCantidad,
+      addItemCarrito,
+    }),
+    [itemCarrito]
+  );
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
-return (
-    <CartContext.Provider value= {{itemCarrito, cartCantidad,addItemCarrito}}>
-     {children}
-    </CartContext.Provider>
-)
 
-
-
-
-
-
-
-
-
-}
-
-
-
-
+export const useCarritoContext = () => useContext(CartContext);
