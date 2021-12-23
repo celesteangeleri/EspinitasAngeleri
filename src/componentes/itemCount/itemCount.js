@@ -2,7 +2,9 @@ import React from "react";
 import "../../scss/main/main.scss";
 import { useState } from "react";
 
+
 const ItemCount = ({ onAdd, initial = 0, stock = 0}) => {
+  
   const [cantidad, setCantidad] = useState(initial);
 
   const sumar = () => {

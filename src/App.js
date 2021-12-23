@@ -10,35 +10,34 @@ import ItemListContainer from "./componentes/itemList/ItemListContainer";
 import ItemDetailContainer from "./componentes/itemDetail/ItemDetailContainer";
 import ItemCount from "./componentes/itemCount/ItemCount";
 import Cart from "./componentes/cart/Cart";
-import { CartContextProvider } from "./context/CartContext";
+import CartContextProvider from "./context/CartContext";
 ///////////////////////notificaciones////////////
 import { NotificationContextProvider } from "./context/NotificatiosContext";
-import Notification from './componentes/notification/Notification'
-
+import Notification from "./componentes/notification/Notification";
 
 function App() {
-
-
   return (
-
-   <CartContextProvider>
-   <NotificationContextProvider>
-  
-    <BrowserRouter>
-      <Navbar />
-      
-     <Notification/>
-      <Routes>
-        <Route exact path="/" element={<ItemListContainer />}></Route>
-        <Route path="category/:categoryId" element={<ItemListContainer />}></Route>
-        <Route path="detail/:paramId" element={<ItemDetailContainer />}></Route>
-        <Route path="count" element={<ItemCount />}></Route>      
-        <Route path= "/cart" element= {<Cart/>} ></Route> 
-      </Routes>
-    </BrowserRouter>
-
-</NotificationContextProvider>
-</CartContextProvider>
+    <CartContextProvider>
+      <NotificationContextProvider>
+        <BrowserRouter>
+          <Navbar />
+          <Notification />
+          <Routes>
+            <Route exact path="/" element={<ItemListContainer />}></Route>
+            <Route
+              path="category/:categoryId"
+              element={<ItemListContainer />}
+            ></Route>
+            <Route
+              path="detail/:paramId"
+              element={<ItemDetailContainer />}
+            ></Route>
+            <Route path="count" element={<ItemCount />}></Route>
+            <Route path="/cart" element={<Cart />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </NotificationContextProvider>
+    </CartContextProvider>
   );
 }
 

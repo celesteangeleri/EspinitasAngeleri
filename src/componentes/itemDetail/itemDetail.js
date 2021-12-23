@@ -10,26 +10,16 @@ import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ prod }) => {
   const {addItemCarrito } = useContext(CartContext)
-  const addToCarrito = (cantidad) =>{
-    prod.inCart = cantidad
-    addItemCarrito(prod)
-    console.log('addToCarrito',addToCarrito);
-  }
-
-const {setNotification} = useContext(NotificationContext)
-
-//const value= useContext(TestContext)
-//console.log(value);
-
+  const {setNotification} = useContext(NotificationContext)
   const [addCarrito, setCarrito] = useState ([])
   
-  const onAdd = (contador )=>{
-   
-    setCarrito(contador)
-    setNotification ('success',`agregaste al carrito ${contador}`)
- 
+  const addToCarrito = (cantidad) =>{
+    setCarrito(cantidad) 
+    prod.inCart = cantidad
+    addItemCarrito(prod)
+    console.log('addItemCarrito',prod);
+    setNotification ('success',`agregaste al carrito ${cantidad} `)
   }
-
  
 if (prod){
   return (
@@ -45,8 +35,8 @@ if (prod){
         <p className="centrar"> CUIDADOS:</p>
         <h3 className="cuidadoProducto"> {prod?.cuidados}</h3>
         <h3 className="precioProducto">Precio: $ {prod?.precio}</h3>
-        {addCarrito > 0 ? <Link className="" to='/cart'> finalizar Compra</Link> : <ItemCount addToCarrito={addToCarrito}  onAdd={onAdd} stock={prod?.stock}  />}
-
+        {addCarrito > 0 ? <Link className="botonLink1" to='/cart'> finalizar Compra</Link> : <ItemCount  onAdd={addToCarrito} stock={prod?.stock}  />}
+        <Link to='/' className="botonLink2"> Volver a la lista</Link>
       </div>
     </div>
     
