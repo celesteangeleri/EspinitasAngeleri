@@ -2,12 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import "../../../scss/main/main.scss"
 
-
-
-const cardWidget = () => {
+const cardWidget = ({cantidad}) => {
     return (
         <div>
-          <Link to='/cart' className = "carrito" ><i className="fas fa-shopping-cart" >0</i></Link>  
+          <Link to='/cart' className = "carrito" ><i className="fas fa-shopping-cart" ></i>{cantidad}</Link>  
         </div>
     )
 }

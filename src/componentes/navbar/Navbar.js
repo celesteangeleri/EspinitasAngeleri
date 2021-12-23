@@ -4,8 +4,10 @@ import "../../scss/navbar/navbar.scss"
 import { Link } from "react-router-dom";
 import {getCategories} from '../../products'
 import { useEffect, useState } from "react";
+import { useCartContext } from '../../context/CartContext'
 
 const Navbar = () => {
+    const {cartCantidad} = useCartContext()
 
     const [categories, setCategories] =  useState ([])
 
@@ -22,7 +24,7 @@ const Navbar = () => {
                         {categories.map(cat => <Link key={cat.id} className='nav-links' to={`/category/${cat.id}`}>{cat.nombre}</Link>)}
                         
             </div>       
-            <CardWidget />
+            <CardWidget cantidad={cartCantidad}/>
         </nav>
 )
     

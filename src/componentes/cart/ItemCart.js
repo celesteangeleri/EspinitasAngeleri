@@ -1,26 +1,27 @@
 import { useCartContext } from "../../context/CartContext";
-import React from 'react'
+import React from "react";
+import '../../scss/main/main.scss'
 
-const ItemCart = ({prod}) => {
-const {removeFromCarrito} = useCartContext()
+const ItemCart = ({ prod }) => {
+    const { removeFromCarrito } = useCartContext();
+    console.log(prod);
 
-const calcularSubTotal =(prod) =>{
-    let subTotal = prod.precio*prod.cantidad
-    return subTotal
-}
+    const calcularSubTotal = (prod) => {
+        let subTotal = prod.precio * prod.inCart;
+        return subTotal;
+    };
 
     return (
-        <div>
-            <tr>
-                <td>{prod.cantidad}</td>
-                <td>{prod.nombre}</td>
-                <td>{prod.precio}</td>               
-                <td> {calcularSubTotal(prod)}</td>
-            </tr>    
-                <button onClick={()=>{ removeFromCarrito(prod.id)}}>x</button>
-            
-        </div>
-    )
-}
+        <>
+            <tr >
+                <td className='tabla'>{prod.inCart}</td>
+                <td className='tabla'>{prod.nombre}</td>
+                <td className='tabla'>{prod.precio}</td>
+                <td className='tabla' > {calcularSubTotal(prod)}</td>
+                <td> <button className="botonX" onClick={() => { removeFromCarrito(prod.id); }}> X  </button></td>
+            </tr>
+        </>
+    );
+};
 
-export default ItemCart
+export default ItemCart;

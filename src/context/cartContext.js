@@ -4,14 +4,13 @@ export const CartContext = createContext();
 export const useCartContext=()=>useContext(CartContext)
 
   const CartContextProvider = ({ children }) =>{
-  const [cartCantidad, setCartCantidad] = useState();
-  const [itemCarrito, setItemCarrito] = useState([]);
-  
+  const [cartCantidad, setCartCantidad] = useState(0);
+  const [itemCarrito, setItemCarrito] = useState([]); 
   const addItemCarrito = (prod) => {
     setItemCarrito ([...itemCarrito,prod]);
     if (cartCantidad){
-    setCartCantidad(cartCantidad + prod.carrito);
-    }else setCartCantidad (prod.carrito)
+    setCartCantidad(cartCantidad + prod.inCart);
+    }else setCartCantidad (prod.inCart)
   };
 
   const isInCarrito = (itemId) =>{

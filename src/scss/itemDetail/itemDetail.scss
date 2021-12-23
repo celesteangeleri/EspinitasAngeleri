@@ -40,28 +40,7 @@
 .centrar {
     text-align: center;
 }
-.contenedorCarrito{
-border: 1px solid black;
-width: 150px;
-margin-left: 250px;
-border-radius: 5px;
-background-color: rgba(241, 228, 211, 0.733);
-}
-.botonCarrito{
-margin: 5px 0px 5px 35px;
-background-color: rgba(235, 180, 212, 0.719);
-border: solid 0.5px rgb(224, 107, 185);
-}
-.botonCarrito{
-    width: fit-content;
-    margin-left: 20px;
-    margin-right: 20px;
-    
-}
-.contador{
-margin: 5px 0px 0px 8px;
-}
-.cargando{
+.cargando {
     width: 50px;
     margin: 20px 0px 0px 600px;
 }
@@ -69,8 +48,8 @@ margin: 5px 0px 0px 8px;
     text-decoration: none;
     border: 1px solid rgb(9, 59, 36);
     border-radius: 2px;
-    box-shadow: 4px 5px 13px -2px rgba(97,113,115,0.75);
-    margin:  30px 10px 20px 350px;
+    box-shadow: 4px 5px 13px -2px rgba(97, 113, 115, 0.75);
+    margin: 30px 10px 20px 350px;
     font-size: 1rem;
     font-weight: 800;
     text-align: center;
@@ -78,14 +57,14 @@ margin: 5px 0px 0px 8px;
     font-family: "Poiret One", cursive;
     color: black;
     padding: 15px 10px;
-    position: absolute;   
+    position: absolute;
 }
 .botonLink2 {
     text-decoration: none;
     border: 1px solid rgb(9, 59, 36);
     border-radius: 2px;
-    box-shadow: 4px 5px 13px -2px rgba(97,113,115,0.75);
-    margin:  30px 10px 20px 150px;
+    box-shadow: 4px 5px 13px -2px rgba(97, 113, 115, 0.75);
+    margin: 30px 10px 20px 150px;
     font-size: 1rem;
     font-weight: 800;
     text-align: center;
@@ -93,5 +72,30 @@ margin: 5px 0px 0px 8px;
     font-family: "Poiret One", cursive;
     color: black;
     padding: 15px 10px;
-    position: absolute;   
+    position: absolute;
 }
+.botonLink3{
+    text-decoration: none;
+    border: 1px solid rgb(9, 59, 36);
+    border-radius: 2px;
+    box-shadow: 4px 5px 13px -2px rgba(97, 113, 115, 0.75);
+    margin: 30px 0px 20px 350px;
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: center;
+    background-color: rgba(23, 32, 23, 0.274);
+    font-family: "Poiret One", cursive;
+    color: black;
+    padding: 15px 10px;
+    position: absolute;
+}
+.boton{
+    margin: 0px 3px 0px 3px;
+    font-family: "Poiret One", cursive;
+    font-weight: 800;
+    text-align: center;
+    font-size: 1rem;
+    
+}
+
+
