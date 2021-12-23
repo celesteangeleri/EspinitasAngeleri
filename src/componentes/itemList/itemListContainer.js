@@ -9,8 +9,7 @@ const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    getProducts(categoryId)
-      .then((item) => {
+    getProducts(categoryId).then(item => {
         setProducts(item);
       })
       .catch((err) => {

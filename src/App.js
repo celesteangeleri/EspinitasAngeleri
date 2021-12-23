@@ -10,8 +10,7 @@ import ItemListContainer from "./componentes/itemList/itemListContainer";
 import ItemDetailContainer from "./componentes/itemDetail/itemDetailContainer";
 import ItemCount from "./componentes/itemCount/itemCount";
 import Cart from "./componentes/cart/Cart";
-import { CartContextProvider } from "./context/CartContext";
-import { useCarritoContext } from "./context/CartContext";
+import CartContextProvider from "./context/CartContext";
 ///////////////////////notificaciones////////////
 import { NotificationContextProvider } from "./context/NotificatiosContext";
 import Notification from "./componentes/notification/Notification";

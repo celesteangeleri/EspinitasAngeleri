@@ -1,36 +1,48 @@
-import React, { useState, createContext, useContext, useMemo } from "react";
+import React, { useState, createContext, useContext } from "react";
 
-const CartContext = createContext();
+export const CartContext = createContext();
+export const useCartContext=()=>useContext(CartContext)
 
-export function CartContextProvider({ children }) {
-  const [cartCantidad, setCartCantidad] = useState(0);
+  const CartContextProvider = ({ children }) =>{
+  const [cartCantidad, setCartCantidad] = useState();
   const [itemCarrito, setItemCarrito] = useState([]);
-  const [count, setCount] = useState(0);
-
+  
   const addItemCarrito = (prod) => {
-    if (itemCarrito.length > 0) {
-      setItemCarrito([...itemCarrito, prod]);
-    } else setItemCarrito(prod);
-  };
-  const addCantidadCarrito = (prod, event) => {
-    setCartCantidad(prod + cartCantidad);
+    setItemCarrito ([...itemCarrito,prod]);
+    if (cartCantidad){
+    setCartCantidad(cartCantidad + prod.carrito);
+    }else setCartCantidad (prod.carrito)
   };
 
-  const increment = () => setCount((counter) => counter + 1);
+  const isInCarrito = (itemId) =>{
+    const estado = itemCarrito.find ((prod) => prod.id === itemId);
+    if (estado == null) return false;
+    else return true
+  };
 
-  const value = useMemo(
-    () => ({
+  const removeFromCarrito = (id) =>{
+    let position = itemCarrito.findIndex((prop) => prop.id ===id);
+    let newItemCarrito = itemCarrito;
+    newItemCarrito.splice(position, 1);
+    setItemCarrito([...newItemCarrito])
+  };
+
+  const removeAll =()=>{
+    setItemCarrito([])
+  };
+
+  return (
+    <CartContext.Provider value={{
       itemCarrito,
-      addCantidadCarrito,
       cartCantidad,
       addItemCarrito,
-    }),
-    [itemCarrito]
-  );
-  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
+      isInCarrito,
+      removeFromCarrito,
+      removeAll
+    }}>
+      {children}
+    </CartContext.Provider>
+  )
 }
 
-
-
-
-export const useCartContext = () => useContext(CartContext);
+export default CartContextProvider;
