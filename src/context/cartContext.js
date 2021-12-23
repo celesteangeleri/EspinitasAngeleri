@@ -1,48 +1,36 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext, useMemo } from "react";
 
-export const CartContext = createContext();
-export const useCartContext = () => useContext(CartContext);
+const CartContext = createContext();
 
-const CartContextProvider = ({ children }) => {
-  const [cartCantidad, setCartCantidad] = useState();
+export function CartContextProvider({ children }) {
+  const [cartCantidad, setCartCantidad] = useState(0);
   const [itemCarrito, setItemCarrito] = useState([]);
+  const [count, setCount] = useState(0);
 
   const addItemCarrito = (prod) => {
-    setItemCarrito([...itemCarrito, prod]);
-    if (cartCantidad) {
-      setCartCantidad(cartCantidad + prod.carrito);
-    } else setCartCantidad(prod.carrito);
+    if (itemCarrito.length > 0) {
+      setItemCarrito([...itemCarrito, prod]);
+    } else setItemCarrito(prod);
+  };
+  const addCantidadCarrito = (prod, event) => {
+    setCartCantidad(prod + cartCantidad);
   };
 
-  const isInCarrito = (itemId) => {
-    const estado = itemCarrito.find ((prod) => prod.id === itemId);
-    if (estado == null) return false;
-    else return true;
+  const increment = () => setCount((counter) => counter + 1);
 
-  };
-  const removeFromCarrito = (id) => {
-    let position = itemCarrito.findIndex((prod) => prod.id === id);
-    let newItemCarrito = itemCarrito;
-    newItemCarrito.splice(position, 1);
-    setItemCarrito([...newItemCarrito]);
-  };
-  const removeAll = () => {
-    setItemCarrito([]);
-  };
-
-  return (
-    <CartContext.Provider
-      value={{
-        itemCarrito,
-        cartCantidad,
-        addItemCarrito,
-        isInCarrito,
-        removeFromCarrito,
-        removeAll,
-      }}
-    >
-      {children}
-    </CartContext.Provider>
+  const value = useMemo(
+    () => ({
+      itemCarrito,
+      addCantidadCarrito,
+      cartCantidad,
+      addItemCarrito,
+    }),
+    [itemCarrito]
   );
-};
-export default CartContextProvider;
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
+}
+
+
+
+
+export const useCartContext = () => useContext(CartContext);

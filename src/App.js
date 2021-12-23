@@ -6,11 +6,12 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 /////////////////////componentes//////////////////
 import Navbar from "./componentes/navbar/Navbar";
-import ItemListContainer from "./componentes/itemList/ItemListContainer";
-import ItemDetailContainer from "./componentes/itemDetail/ItemDetailContainer";
-import ItemCount from "./componentes/itemCount/ItemCount";
+import ItemListContainer from "./componentes/itemList/itemListContainer";
+import ItemDetailContainer from "./componentes/itemDetail/itemDetailContainer";
+import ItemCount from "./componentes/itemCount/itemCount";
 import Cart from "./componentes/cart/Cart";
-import CartContextProvider from "./context/CartContext";
+import { CartContextProvider } from "./context/CartContext";
+import { useCarritoContext } from "./context/CartContext";
 ///////////////////////notificaciones////////////
 import { NotificationContextProvider } from "./context/NotificatiosContext";
 import Notification from "./componentes/notification/Notification";
