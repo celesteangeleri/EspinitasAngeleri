@@ -2,7 +2,6 @@ import React from "react";
 import "../../scss/main/main.scss";
 import { useEffect, useState } from "react";
 import ItemDetail from "./itemDetail";
-import { getProductById } from "../../products";
 import { useParams } from "react-router-dom";
 import {getDoc, doc} from 'firebase/firestore'
 import { db } from "../../services/firebase/firebase";
@@ -16,7 +15,7 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     setLoading(true)
     getDoc(doc(db, 'items',paramId)).then((querysnapshot) => {
-      const product ={id: querysnapshot.id, ... querysnapshot.data()}
+      const product ={id:querysnapshot.id,...querysnapshot.data()}
     setProducts(product)
     }).catch((error) =>{
       console.log('error searching item', error);
