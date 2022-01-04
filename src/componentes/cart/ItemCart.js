@@ -6,7 +6,7 @@ import '../../scss/main/main.scss';
 
 const ItemCart = ({ prod }) => {
     const { removeFromCarrito } = useCartContext();
-    console.log(prod);
+
 
    const calcularSubTotal = (prod) => {
         let subTotal = prod.precio * prod.inCart;

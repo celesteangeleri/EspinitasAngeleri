@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import ItemCart from "../cart/ItemCart";
 import "../../scss/main/main.scss";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
-
+import { addDoc, collection } from "firebase/firestore";
+import {db} from '../../services/firebase/firebase'
 import { useState } from "react";
 import ReciboCompra from "./ReciboCompra";
 
@@ -13,17 +13,30 @@ const Cart = () => {
   const { itemCarrito, removeFromCarrito, removeAll } = useCartContext();
   const [orderState, setOrderState] = useState(false)
   const [recibo, setRecibo] = useState ({})
+  const [formData, setFormData]=useState({
+    nombre:'',
+    email:'',
+    telefono:'',
+  
+})
+const handlerChange=(e)=>{
+    setFormData({
+        ...formData,
+        [e.target.name]: e.target.value
+    })
+}
  
-const sendOrder =()=>{
-    const order = {
-        buyer : {name:'agustin', phone: '1111', email: 'a@a.com'},
-        items: [{ name: 'bici', price:100}],
-        total:100
-    }
-    const db = getFirestore();
-    const ordersCollection = collection(db, 'orders')
-
-addDoc (collection(db, order), order).then(({id}) => { console.log(id);})
+const sendOrder =(e)=>{
+    e.preventDefault()
+    const objOrder = {
+        nombre: formData.nombre,
+        email: formData.email,
+        telefono: formData.telefono
+         }
+    
+const orderCollection = collection(db, "orders")
+addDoc(orderCollection, objOrder).then(({id}) => { console.log(id)})
+console.log(addDoc, 'esto es addDoc');
 }
  
 //si el carrito esta vacio retorna boton al menú
@@ -72,14 +85,13 @@ addDoc (collection(db, order), order).then(({id}) => { console.log(id);})
         </div>
         <div className="containerForm">
           <p> Complete el formulario para terminar su compra </p>
-           <form onSubmit={sendOrder} >
-            {/* <input type="text" name= 'nombre' placeholder='nombre' value={formData.nombre} />
+         <form onSubmit={sendOrder} onChange={handlerChange} >
+            <input type="text" name= 'nombre' placeholder='nombre' value={formData.name} />
             <input type="text" name= 'telefono' placeholder='telefono' value={formData.telefono} />
-            <input type="email" name= 'email' placeholder='email' value={formData.email} />
-            <input type="email" name='repetirEmail' placeholder='repita su email' value={formData.repetirEmail} />
-             */}<button>Enviar</button>
+            <input type="email" name= 'email' placeholder='email' value={formData.email} />      
+            <button >Enviar</button>      
         </form>
-         
+          
         </div>
       </>
     );
