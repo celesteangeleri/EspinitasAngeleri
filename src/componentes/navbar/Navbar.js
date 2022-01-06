@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { useCartContext } from '../../context/CartContext'
 
 const Navbar = () => {
-    const {cartCantidad} = useCartContext()
+    const {cartQuantity} = useCartContext()
 
     const [categories, setCategories] =  useState ([])
 
@@ -24,7 +24,7 @@ const Navbar = () => {
                         {categories.map(cat => <Link key={cat.id} className='nav-links' to={`/category/${cat.id}`}>{cat.nombre}</Link>)}
                         
             </div>       
-            <CardWidget cantidad={cartCantidad}/>
+            <CardWidget quantity={cartQuantity}/>
         </nav>
 )
     

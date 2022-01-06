@@ -4,39 +4,40 @@ export const CartContext = createContext();
 export const useCartContext=()=>useContext(CartContext)
 
   const CartContextProvider = ({ children }) =>{
-  const [cartCantidad, setCartCantidad] = useState(0);
-  const [itemCarrito, setItemCarrito] = useState([]); 
-  const addItemCarrito = (prod) => {
-    setItemCarrito ([...itemCarrito,prod]);
-    if (cartCantidad){
-    setCartCantidad(cartCantidad + prod.inCart);
-    }else setCartCantidad (prod.inCart)
+  const [cartQuantity, setCartQuantity] = useState(0);
+  const [itemCart, setItemCart] = useState([]); 
+  
+  const addItemCart = (prod) => {
+    setItemCart ([...itemCart,prod]);
+    if (cartQuantity){
+    setCartQuantity(cartQuantity + prod.inCart);
+    }else setCartQuantity (prod.inCart)
   };
 
-  const isInCarrito = (itemId) =>{
-    const estado = itemCarrito.find ((prod) => prod.id === itemId);
-    if (estado == null) return false;
+  const isInCart = (itemId) =>{
+    const state = itemCart.find ((prod) => prod.id === itemId);
+    if (state == null) return false;
     else return true
   };
 
-  const removeFromCarrito = (id) =>{
-    let position = itemCarrito.findIndex((prop) => prop.id ===id);
-    let newItemCarrito = itemCarrito;
-    newItemCarrito.splice(position, 1);
-    setItemCarrito([...newItemCarrito])
+  const removeFromCart = (id) =>{
+    let position = itemCart.findIndex((prop) => prop.id ===id);
+    let newItemCart = itemCart;
+    newItemCart.splice(position, 1);
+    setItemCart([...newItemCart])
   };
 
   const removeAll =()=>{
-    setItemCarrito([])
+    setItemCart([])
   };
 
   return (
     <CartContext.Provider value={{
-      itemCarrito,
-      cartCantidad,
-      addItemCarrito,
-      isInCarrito,
-      removeFromCarrito,
+      itemCart,
+      cartQuantity,
+      addItemCart,
+      isInCart,
+      removeFromCart,
       removeAll
     }}>
       {children}

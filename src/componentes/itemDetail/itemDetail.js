@@ -7,13 +7,13 @@ import {CartContext} from '../../context/CartContext'
 
 
 const ItemDetail = ({ prod }) => {
-  const { addItemCarrito} = useContext(CartContext);
- const [addCarrito, setCarrito] = useState ([])
+  const { addItemCart} = useContext(CartContext);
+ const [addCart, setCart] = useState ([])
 
-  const addToCarrito = (cantidad) => {
-   setCarrito(cantidad)
-   prod.inCart = cantidad
-   addItemCarrito(prod)
+  const addToCart = (quantity) => {
+   setCart(quantity)
+   prod.inCart = quantity
+   addItemCart(prod)
   }
     if (prod) {
       return (
@@ -28,7 +28,7 @@ const ItemDetail = ({ prod }) => {
           <p className="centrar"> CUIDADOS:</p>
           <h3 className="cuidadoProducto"> {prod?.cuidados}</h3>
           <h3 className="precioProducto">Precio: $ {prod?.precio}</h3>
-          {addCarrito > 0 ? <Link className="botonLink1" to='/cart'> finalizar Compra</Link> : <ItemCount  onAdd={addToCarrito} stock={prod?.stock}  />}
+          {addCart > 0 ? <Link className="botonLink1" to='/cart'> finalizar Compra</Link> : <ItemCount  onAdd={addToCart} stock={prod?.stock}  />}
           <Link to='/' className="botonLink2"> Volver a la lista</Link>
         </div>
 

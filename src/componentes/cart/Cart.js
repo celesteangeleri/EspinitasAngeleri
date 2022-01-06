@@ -3,44 +3,65 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import ItemCart from "../cart/ItemCart";
 import "../../scss/main/main.scss";
-import { addDoc, collection } from "firebase/firestore";
-import {db} from '../../services/firebase/firebase'
+import { addDoc, collection, Timestamp, doc, writeBatch, getDoc } from "firebase/firestore";
+import { db } from "../../services/firebase/firebase";
 import { useState } from "react";
-import ReciboCompra from "./ReciboCompra";
-
 
 const Cart = () => {
-  const { itemCarrito, removeFromCarrito, removeAll } = useCartContext();
-  const [orderState, setOrderState] = useState(false)
-  const [recibo, setRecibo] = useState ({})
-  const [formData, setFormData]=useState({
-    nombre:'',
-    email:'',
-    telefono:'',
-  
-})
-const handlerChange=(e)=>{
+  const { itemCart, removeFromCart, removeAll } = useCartContext();  
+  const [formData, setFormData] = useState({
+    nombre: "",
+    email: "",
+    telefono: "",
+  });
+  const handlerChange = (e) => {
     setFormData({
-        ...formData,
-        [e.target.name]: e.target.value
-    })
-}
- 
-const sendOrder =(e)=>{
-    e.preventDefault()
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+//objeto de la orden de compra
+  const sendOrder = (e) => {
+    e.preventDefault();
     const objOrder = {
-        nombre: formData.nombre,
-        email: formData.email,
-        telefono: formData.telefono
-         }
+      nombre: formData.nombre,
+      email: formData.email,
+      telefono: formData.telefono,
+      items: itemCart,
+      dia: Timestamp.fromDate(new Date())
+    };
+// agrego una nueva coleccion y update de stock
+
+    const batch = writeBatch(db)
+    const outofStock = []
     
-const orderCollection = collection(db, "orders")
-addDoc(orderCollection, objOrder).then(({id}) => { console.log(id)})
-console.log(addDoc, 'esto es addDoc');
-}
- 
-//si el carrito esta vacio retorna boton al menú
-  if (itemCarrito.length === 0)
+    objOrder.items.forEach(prod => {
+      getDoc(doc(db, 'items', prod.id)).then(documentSnapshot => {       
+        if (documentSnapshot.data().stock >= prod.quantity) {
+          console.log('esto es el stock');
+          batch.update(doc(db, 'items', documentSnapshot.id), {
+            stock:documentSnapshot.data().stock - prod.quantity
+          })
+        }else{
+          outofStock.push({ id: documentSnapshot.id, ...documentSnapshot.data()})
+        }
+      })
+    })
+
+    if(outofStock.length === 0){
+      addDoc(collection(db, 'orders'), objOrder).then(({id}) => {
+        batch.commit().then(()=>{
+          console.log('su id de compra es', id)          
+        })         
+      }).catch((error) => {
+        console.log(error, 'error al ejecutar la orden');
+      })
+    }
+  
+  }
+
+  //si el carrito esta vacio retorna boton al menú
+  if (itemCart.length === 0){
     return (
       <div className="carritoVacio">
         <h2 className="textoCV">El carrito esta vacio</h2>
@@ -48,13 +69,9 @@ console.log(addDoc, 'esto es addDoc');
           volver al Inicio
         </Link>
       </div>
-    );
-// sino muestra la tabla con productos y el formulario 
- else {
-    if (orderState === true)
-    return <ReciboCompra recibo = {recibo} removeAll = {removeAll}/>
-    else
-
+    )
+    } 
+  // sino muestra la tabla con productos y el formulario
     return (
       <>
         <table className="containerTabla">
@@ -64,9 +81,9 @@ console.log(addDoc, 'esto es addDoc');
             <th> Precio </th>
             <th> total </th>
           </tr>
-          {itemCarrito.map((prod) => (
+          {itemCart.map((prod) => (
             <ItemCart
-              removeFromCarrito={removeFromCarrito}
+              removeFromCarrito={removeFromCart}
               key={prod.id}
               prod={prod}
             />
@@ -85,17 +102,31 @@ console.log(addDoc, 'esto es addDoc');
         </div>
         <div className="containerForm">
           <p> Complete el formulario para terminar su compra </p>
-         <form onSubmit={sendOrder} onChange={handlerChange} >
-            <input type="text" name= 'nombre' placeholder='nombre' value={formData.name} />
-            <input type="text" name= 'telefono' placeholder='telefono' value={formData.telefono} />
-            <input type="email" name= 'email' placeholder='email' value={formData.email} />      
-            <button >Enviar</button>      
-        </form>
-          
+          <form onSubmit={sendOrder} onChange={handlerChange}>
+            <input
+              type="text"
+              name="nombre"
+              placeholder="nombre"
+              defaultValue={formData.name}
+            />
+            <input
+              type="text"
+              name="telefono"
+              placeholder="telefono"
+              defaultValue={formData.telefono}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="email"
+              defaultValue={formData.email}
+            />
+
+            <button>Terminar compra</button>
+          </form>
         </div>
       </>
     );
-          }
 };
 
 export default Cart;

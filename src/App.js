@@ -15,6 +15,7 @@ import CartContextProvider from "./context/CartContext";
 import { NotificationContextProvider } from "./context/NotificatiosContext";
 import Notification from "./componentes/notification/Notification";
 
+
 function App() {
   return (
     <CartContextProvider>
@@ -34,6 +35,7 @@ function App() {
             ></Route>
             <Route path="count" element={<ItemCount />}></Route>
             <Route path="/cart" element={<Cart />}></Route>
+            
           </Routes>
         </BrowserRouter>
       </NotificationContextProvider>

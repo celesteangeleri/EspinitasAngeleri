@@ -14,9 +14,9 @@ const ItemListContainer = () => {
     if (!categoryId) {
      setLoading(true)
     getDocs(collection(db,'items')).then((querySnapshot)=>{
-      console.log(querySnapshot);
+      
       const products =querySnapshot.docs.map(doc=>{
-        console.log(doc);
+        
         return {id :doc.id, ...doc.data()}
       })
       setProducts(products)
@@ -28,9 +28,9 @@ const ItemListContainer = () => {
     }else{
       setLoading(true)
       getDocs(query(collection (db, 'items'), where('category', '==',categoryId ))).then((querySnapshot)=>{
-        console.log(querySnapshot);
+        
         const products =querySnapshot.docs.map(doc=>{
-          console.log(doc);
+         
           return {id :doc.id, ...doc.data()}
         })
         setProducts(products)
