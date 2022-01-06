@@ -70,6 +70,34 @@ table{
     position: absolute;
 }
 .containerForm{
-    margin-top: 5rem;
+   flex-direction: column;
+    margin-top: 3rem;    
     text-align: center;
+}
+.form{
+margin-top: 1rem;
+margin-left: 42%;  
+}
+.input{  
+    display: flex;
+    padding: 0.5rem;
+    margin: 10px;
+    flex-direction: column;
+}
+.gracias{
+    font-size: 1rem;
+    font-family: "Poiret One", cursive;
+    
+}
+.idCompra{
+    font-size: 0.8rem;
+    font-family: "Poiret One", cursive;
+}
+.divGracias{
+    text-align: center;
+    background-color: rgb(178, 226, 228);
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 50px;
+    border: 1px solid black
 }
