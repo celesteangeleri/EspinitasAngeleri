@@ -11,9 +11,10 @@ import ItemDetailContainer from "./componentes/itemDetail/itemDetailContainer";
 import ItemCount from "./componentes/itemCount/itemCount";
 import Cart from "./componentes/cart/Cart";
 import CartContextProvider from "./context/CartContext";
+
 ///////////////////////notificaciones////////////
 import { NotificationContextProvider } from "./context/NotificatiosContext";
-import Notification from "./componentes/notification/Notification";
+
 
 
 function App() {
@@ -22,7 +23,6 @@ function App() {
       <NotificationContextProvider>
         <BrowserRouter>
           <Navbar />
-          <Notification />
           <Routes>
             <Route exact path="/" element={<ItemListContainer />}></Route>
             <Route
@@ -35,6 +35,7 @@ function App() {
             ></Route>
             <Route path="count" element={<ItemCount />}></Route>
             <Route path="/cart" element={<Cart />}></Route>
+           
             
           </Routes>
         </BrowserRouter>

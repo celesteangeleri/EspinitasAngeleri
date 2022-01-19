@@ -3,7 +3,7 @@ import "../../scss/main/main.scss";
 import { useState } from "react";
 
 
-const ItemCount = ({ onAdd, initial = 0, stock = 0}) => {
+const ItemCount = ({ onAdd, initial = 1, stock = 0}) => {
   
   const [cantidad, setCantidad] = useState(initial);
 

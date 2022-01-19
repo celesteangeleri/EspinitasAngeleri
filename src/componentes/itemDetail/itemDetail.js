@@ -28,7 +28,8 @@ const ItemDetail = ({ prod }) => {
           <p className="centrar"> CUIDADOS:</p>
           <h3 className="cuidadoProducto"> {prod?.cuidados}</h3>
           <h3 className="precioProducto">Precio: $ {prod?.precio}</h3>
-          {addCart > 0 ? <Link className="botonLink1" to='/cart'> finalizar Compra</Link> : <ItemCount  onAdd={addToCart} stock={prod?.stock}  />}
+          {addCart > 0 ? <Link className="botonLink1" to='/cart'> finalizar Compra</Link> :
+            <ItemCount  onAdd={addToCart} stock={prod?.stock}  />}
           <Link to='/' className="botonLink2"> Volver a la lista</Link>
         </div>
 

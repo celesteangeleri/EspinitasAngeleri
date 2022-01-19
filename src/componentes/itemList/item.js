@@ -12,7 +12,7 @@ const Item = ({ product }) => {
     <div className="item" onClick={handleClick}>
       <h1>{product.nombre}</h1>
       <img src={product.img} alt="" />
-      <h3>{product.precio}</h3>
+      <h3>precio:$ {product.precio}</h3>
       <Link className="botonLink" to={`/detail/${product.id}`}>
         Ver detalle
       </Link>

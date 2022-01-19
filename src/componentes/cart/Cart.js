@@ -6,15 +6,18 @@ import "../../scss/main/main.scss";
 import { addDoc, collection, Timestamp, doc, writeBatch, getDoc } from "firebase/firestore";
 import { db } from "../../services/firebase/firebase";
 import { useState } from "react";
+import Swal from 'sweetalert2'
 
 const Cart = () => {
+
+
   const { itemCart, removeFromCart, removeAll } = useCartContext();  
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
     telefono: "",
   });
-  const [compra, setCompra] = useState({
+  const [setCompra] = useState({
     id: ""
   });
 
@@ -55,7 +58,8 @@ const Cart = () => {
       addDoc(collection(db, 'orders'), objOrder).then(({id}) => {
         batch.commit().then(()=>{
           setCompra({id})
-          console.log('su id de compra es', id)          
+          console.log('su id de compra es', id)    
+          terminar(id)      
         })         
       }).catch((error) => {
         console.log(error, 'error al ejecutar la orden');
@@ -63,6 +67,18 @@ const Cart = () => {
     }
   
   }
+  const terminar = (id)=> {
+  Swal.fire({
+    title: 'Tu id de compra es',
+    text: `${id}`,
+    imageUrl: 'https://i.imgur.com/v5FwnQp.png',
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: 'Custom image',
+  })  
+  }
+  
+  
 
   //si el carrito esta vacio retorna boton al menú
   if (itemCart.length === 0){
@@ -133,17 +149,16 @@ const Cart = () => {
               className="input"
               defaultValue={formData.email}
             />
-
-            <button className="input" >Terminar compra</button>
+          
+            <button className="input">
+              terminar compra
+            </button>
+            
+           
           </form>
         </div>
-        <div className="divGracias">
-          <h1 className="gracias">¡ Muchas Gracias por su compra !</h1>
-          <h3 className="idCompra">Su id de compra es:{compra?.id ? <h4>{compra?.id}</h4>: ''} </h3>
-        </div>
-        
-      </>
-    );
+        </>
+    ); 
 };
 
 export default Cart;
