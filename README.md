@@ -6,9 +6,10 @@
 
 ## 📫 Y podes contactarme por aqui angelericeleste@gmail.com
 
+##vista previa de mi proyecto:
+![image](https://i.imgur.com/LoL10Oz.gifv)
 
-
-## Available Scripts
+## Para poder iniciar el proyecto:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
