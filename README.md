@@ -13,7 +13,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-In the project directory, you can run:
+In the project directory, you can run:![espinitas](https://user-images.githubusercontent.com/50773997/150203752-2c672936-8df7-416e-81ca-71a8c102ab26.gif)
+
 
 ### `npm start`
 
