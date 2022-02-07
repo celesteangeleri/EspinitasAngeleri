@@ -6,7 +6,7 @@
 
 ## 📫 Y podes contactarme por aqui angelericeleste@gmail.com
 
-##vista previa de mi proyecto:
+## vista previa de mi proyecto:
 
 ![espinitas](https://user-images.githubusercontent.com/50773997/150203752-2c672936-8df7-416e-81ca-71a8c102ab26.gif)
 
